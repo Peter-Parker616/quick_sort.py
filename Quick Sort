@@ -1,0 +1,15 @@
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[len(arr) // 2]  # Escolha do pivô
+        left = [x for x in arr if x < pivot]  # Sublista esquerda
+        middle = [x for x in arr if x == pivot]  # Sublista do pivô
+        right = [x for x in arr if x > pivot]  # Sublista direita
+        return quick_sort(left) + middle + quick_sort(right)  # Combinação
+
+# Exemplo de uso
+if __name__ == "__main__":
+    lista = [10, 5, 2, 3, 99, 12]
+    lista_ordenada = quick_sort(lista)
+    print(lista_ordenada)  # Saída: [2, 3, 5, 10, 12, 99]
